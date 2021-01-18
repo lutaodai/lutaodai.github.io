@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Lorem Ipsum Dolor Sit Amet Consectetur Elit</title>
-    <url>/2013-05-06-more-post/</url>
-    <content><![CDATA[<p>I am a placeholder post. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<blockquote>
-<p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Abore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
-<p>– Akei Yue</p>
-</blockquote>
-<ol>
-<li><p>List with code</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">not highlighted</span><br><span class="line">multi line</span><br></pre></td></tr></table></figure></li>
-<li><p>List with code</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'boom'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(dom);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dialog</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>Headsup<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"js-close-dialog"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>test_cat_2</category>
-      </categories>
-      <tags>
-        <tag>test_tag_1</tag>
-        <tag>test2_tag_3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Introduction to Statistics</title>
     <url>/2007-01-08-Intro%20Stats/</url>
     <content><![CDATA[<h1 id="Stats-Preliminaries"><a href="#Stats-Preliminaries" class="headerlink" title="Stats Preliminaries"></a>Stats Preliminaries</h1><p>Organized based on <a class="link" href="https://ocw.mit.edu/courses/mathematics/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/lecture-notes/MIT18_S096F13_lecnote3.pdf">lecture notes 3<i class="fas fa-external-link-alt"></i></a>.</p>
@@ -123,6 +96,33 @@
       <tags>
         <tag>test_tag_1</tag>
         <tag>test2_tag_2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lorem Ipsum Dolor Sit Amet Consectetur Elit</title>
+    <url>/2013-05-06-more-post/</url>
+    <content><![CDATA[<p>I am a placeholder post. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<blockquote>
+<p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Abore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+<p>– Akei Yue</p>
+</blockquote>
+<ol>
+<li><p>List with code</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">not highlighted</span><br><span class="line">multi line</span><br></pre></td></tr></table></figure></li>
+<li><p>List with code</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'boom'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(dom);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dialog</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>Headsup<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"js-close-dialog"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>test_cat_2</category>
+      </categories>
+      <tags>
+        <tag>test_tag_1</tag>
+        <tag>test2_tag_3</tag>
       </tags>
   </entry>
   <entry>
