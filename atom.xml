@@ -36,9 +36,9 @@
     <category term="test_cat_2" scheme="https://lutaodai.github.io/categories/test-cat-2/"/>
     
     
-    <category term="test2_tag_3" scheme="https://lutaodai.github.io/tags/test2-tag-3/"/>
-    
     <category term="test_tag_2" scheme="https://lutaodai.github.io/tags/test-tag-2/"/>
+    
+    <category term="test2_tag_3" scheme="https://lutaodai.github.io/tags/test2-tag-3/"/>
     
   </entry>
   
@@ -62,9 +62,9 @@
     <category term="test_cat_2" scheme="https://lutaodai.github.io/categories/test-cat-2/"/>
     
     
-    <category term="test2_tag_3" scheme="https://lutaodai.github.io/tags/test2-tag-3/"/>
-    
     <category term="test_tag_2" scheme="https://lutaodai.github.io/tags/test-tag-2/"/>
+    
+    <category term="test2_tag_3" scheme="https://lutaodai.github.io/tags/test2-tag-3/"/>
     
   </entry>
   

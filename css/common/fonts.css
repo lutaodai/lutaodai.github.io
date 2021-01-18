@@ -1,3 +1,4 @@
+/* cyrillic-ext */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -6,6 +7,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LLPtLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+/* cyrillic */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -14,6 +16,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LJftLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+/* vietnamese */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -22,6 +25,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LLvtLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+/* latin-ext */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -30,6 +34,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LL_tLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -38,6 +43,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LIftLtfOm8w.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* cyrillic-ext */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -46,6 +52,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LLPtLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+/* cyrillic */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -54,6 +61,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LJftLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+/* vietnamese */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -62,6 +70,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LLvtLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+/* latin-ext */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -70,6 +79,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LL_tLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -78,6 +88,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LIftLtfOm8w.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* cyrillic-ext */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -86,6 +97,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LLPtLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+/* cyrillic */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -94,6 +106,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LJftLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+/* vietnamese */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -102,6 +115,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LLvtLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+/* latin-ext */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -110,6 +124,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LL_tLtfOm84TX.woff2") format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -118,6 +133,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIhMX1D_JOuMw_LIftLtfOm8w.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* cyrillic-ext */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -126,6 +142,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwf7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+/* cyrillic */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -134,6 +151,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMw77I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+/* vietnamese */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -142,6 +160,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwX7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+/* latin-ext */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -150,6 +169,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwT7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -158,6 +178,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwr7I_FMl_E.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* cyrillic-ext */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -166,6 +187,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwf7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+/* cyrillic */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -174,6 +196,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMw77I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+/* vietnamese */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -182,6 +205,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwX7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+/* latin-ext */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -190,6 +214,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwT7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -198,6 +223,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwr7I_FMl_E.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* cyrillic-ext */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -206,6 +232,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwf7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+/* cyrillic */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -214,6 +241,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMw77I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+/* vietnamese */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -222,6 +250,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwX7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+/* latin-ext */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -230,6 +259,7 @@
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwT7I_FMl_GW8g.woff2") format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+/* latin */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -237,275 +267,4 @@
   font-display: swap;
   src: url("https://fonts.gstatic.com/s/lora/v16/0QIvMX1D_JOuMwr7I_FMl_E.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-:root {
-  --background-color: #fff;
-  --second-background-color: #f7f7f7;
-  --primary-color: #06c;
-  --first-text-color: #484848;
-  --second-text-color: #4c4c4c;
-  --third-text-color: #858585;
-  --fourth-text-color: #ededed;
-  --default-text-color: #505050;
-  --border-color: #b3b3b3;
-  --selection-color: #0075eb;
-  --shadow-color: rgba(0,0,0,0.2);
-  --shadow-hover-color: rgba(0,0,0,0.28);
-  --scrollbar-color: #737373;
-  --scroll-bar-bg-color: #e6e6e6;
-  --link-color: #484848;
-  --copyright-info-color: #c03;
-  --avatar-background-color: #06c;
-  --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #363636;
-    --second-background-color: #313131;
-    --primary-color: #06c;
-    --first-text-color: #cecbd4;
-    --second-text-color: #c7c4ce;
-    --third-text-color: #928ca0;
-    --fourth-text-color: #242229;
-    --default-text-color: #b9b5c2;
-    --border-color: #5e5e5e;
-    --selection-color: #0075eb;
-    --shadow-color: rgba(128,128,128,0.2);
-    --shadow-hover-color: rgba(128,128,128,0.28);
-    --scrollbar-color: #262626;
-    --scroll-bar-bg-color: #4a4a4a;
-    --link-color: #c0bcc8;
-    --copyright-info-color: #a30029;
-    --avatar-background-color: #005cb8;
-    --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
-  }
-}
-.light-mode {
-  --background-color: #fff;
-  --second-background-color: #f7f7f7;
-  --primary-color: #06c;
-  --first-text-color: #484848;
-  --second-text-color: #4c4c4c;
-  --third-text-color: #858585;
-  --fourth-text-color: #ededed;
-  --default-text-color: #505050;
-  --border-color: #b3b3b3;
-  --selection-color: #0075eb;
-  --shadow-color: rgba(0,0,0,0.2);
-  --shadow-hover-color: rgba(0,0,0,0.28);
-  --scrollbar-color: #737373;
-  --scroll-bar-bg-color: #e6e6e6;
-  --link-color: #484848;
-  --copyright-info-color: #c03;
-  --avatar-background-color: #06c;
-  --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
-}
-.dark-mode {
-  --background-color: #363636;
-  --second-background-color: #313131;
-  --primary-color: #06c;
-  --first-text-color: #cecbd4;
-  --second-text-color: #c7c4ce;
-  --third-text-color: #928ca0;
-  --fourth-text-color: #242229;
-  --default-text-color: #b9b5c2;
-  --border-color: #5e5e5e;
-  --selection-color: #0075eb;
-  --shadow-color: rgba(128,128,128,0.2);
-  --shadow-hover-color: rgba(128,128,128,0.28);
-  --scrollbar-color: #262626;
-  --scroll-bar-bg-color: #4a4a4a;
-  --link-color: #c0bcc8;
-  --copyright-info-color: #a30029;
-  --avatar-background-color: #005cb8;
-  --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
-}
-.normal-code-theme {
-  --code-foreground: #535353;
-  --code-background: #f2f2f2;
-  --highlight-background: #fafafa;
-  --highlight-foreground: #535353;
-  --highlight-comment: #8e908c;
-  --highlight-red: #c82829;
-  --highlight-orange: #f5871f;
-  --highlight-yellow: #eab700;
-  --highlight-green: #718c00;
-  --highlight-aqua: #3e999f;
-  --highlight-blue: #4271ae;
-  --highlight-purple: #8959a8;
-  --highlight-gutter-color: #595959;
-  --highlight-gutter-bg-color: #f2f2f2;
-}
-.night-code-theme {
-  --code-foreground: #bab6c3;
-  --code-background: #313131;
-  --highlight-background: #323232;
-  --highlight-foreground: #bab6c3;
-  --highlight-comment: #969896;
-  --highlight-red: #c66;
-  --highlight-orange: #de935f;
-  --highlight-yellow: #f0c674;
-  --highlight-green: #b5bd68;
-  --highlight-aqua: #8abeb7;
-  --highlight-blue: #81a2be;
-  --highlight-purple: #b294bb;
-  --highlight-gutter-color: #bcb9c5;
-  --highlight-gutter-bg-color: #313131;
-}
-pre,
-.highlight {
-  overflow: auto;
-  margin: 20px 0;
-  padding: 0;
-  font-size: 0.96rem;
-  color: var(--highlight-foreground);
-  background: var(--highlight-background);
-  line-height: 1.5rem;
-  transition: all 0.5s ease;
-}
-pre,
-code {
-  font-family: "Source Code Pro", consolas, Menlo;
-}
-code {
-  padding: 5px;
-  word-wrap: break-word;
-  color: var(--code-foreground);
-  background: var(--code-background);
-  border-radius: 2px;
-  font-size: 0.96rem;
-}
-pre {
-  padding: 10px;
-}
-pre code {
-  padding: 0;
-  color: var(--highlight-foreground);
-  background: none;
-  text-shadow: none;
-}
-.highlight {
-  border-radius: 1px;
-}
-.highlight pre {
-  border: none;
-  margin: 0;
-  padding: 10px 0;
-}
-.highlight table {
-  margin: 0;
-  width: auto;
-  border: none;
-  border-spacing: unset;
-}
-.highlight td {
-  border: none;
-  padding: 0;
-}
-.highlight figcaption {
-  font-size: 1rem;
-  color: var(--highlight-foreground);
-  line-height: 1rem;
-  margin-bottom: 1rem;
-}
-.highlight figcaption a {
-  float: right;
-  color: var(--highlight-foreground);
-}
-.highlight figcaption a:hover {
-  border-bottom-color: var(--highlight-foreground);
-}
-.highlight .gutter pre {
-  padding-left: 10px;
-  padding-right: 10px;
-  color: var(--highlight-gutter-color);
-  text-align: center;
-  background-color: var(--highlight-gutter-bg-color);
-}
-.highlight .code pre {
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: var(--highlight-background);
-}
-.highlight .line {
-  height: 20px;
-}
-.gutter {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.gist table {
-  width: auto;
-}
-.gist table td {
-  border: none;
-}
-pre .deletion {
-  background: var(--highlight-deletion);
-}
-pre .addition {
-  background: var(--highlight-addition);
-}
-pre .meta {
-  color: var(--highlight-purple);
-}
-pre .comment {
-  color: var(--highlight-comment);
-}
-pre .variable,
-pre .attribute,
-pre .tag,
-pre .regexp,
-pre .ruby .constant,
-pre .xml .tag .title,
-pre .xml .pi,
-pre .xml .doctype,
-pre .html .doctype,
-pre .css .id,
-pre .css .class,
-pre .css .pseudo {
-  color: var(--highlight-red);
-}
-pre .number,
-pre .preprocessor,
-pre .built_in,
-pre .literal,
-pre .params,
-pre .constant,
-pre .command {
-  color: var(--highlight-orange);
-}
-pre .ruby .class .title,
-pre .css .rules .attribute,
-pre .string,
-pre .value,
-pre .inheritance,
-pre .header,
-pre .ruby .symbol,
-pre .xml .cdata,
-pre .special,
-pre .number,
-pre .formula {
-  color: highlight-green;
-}
-pre .title,
-pre .css .hexcolor {
-  color: var(--highlight-aqua);
-}
-pre .function,
-pre .python .decorator,
-pre .python .title,
-pre .ruby .function .title,
-pre .ruby .title .keyword,
-pre .perl .sub,
-pre .javascript .title,
-pre .coffeescript .title {
-  color: var(--highlight-blue);
-}
-pre .keyword,
-pre .javascript .function {
-  color: var(--highlight-purple);
 }
