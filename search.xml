@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Lorem Ipsum Dolor Sit Amet Consectetur Elit</title>
-    <url>/2013-05-06-more-post/</url>
-    <content><![CDATA[<p>I am a placeholder post. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<blockquote>
-<p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Abore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
-<p>– Akei Yue</p>
-</blockquote>
-<ol>
-<li><p>List with code</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">not highlighted</span><br><span class="line">multi line</span><br></pre></td></tr></table></figure></li>
-<li><p>List with code</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'boom'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(dom);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dialog</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>Headsup<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"js-close-dialog"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>test_cat_2</category>
-      </categories>
-      <tags>
-        <tag>test_tag_1</tag>
-        <tag>test2_tag_3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Introduction to Statistics</title>
     <url>/2007-01-08-Intro%20Stats/</url>
     <content><![CDATA[<h1 id="Stats-Preliminaries"><a href="#Stats-Preliminaries" class="headerlink" title="Stats Preliminaries"></a>Stats Preliminaries</h1><p>Organized based on <a class="link" href="https://ocw.mit.edu/courses/mathematics/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/lecture-notes/MIT18_S096F13_lecnote3.pdf">lecture notes 3<i class="fas fa-external-link-alt"></i></a>.</p>
@@ -126,6 +99,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Lorem Ipsum Dolor Sit Amet Consectetur Elit</title>
+    <url>/2013-05-06-more-post/</url>
+    <content><![CDATA[<p>I am a placeholder post. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<blockquote>
+<p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Abore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+<p>– Akei Yue</p>
+</blockquote>
+<ol>
+<li><p>List with code</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">not highlighted</span><br><span class="line">multi line</span><br></pre></td></tr></table></figure></li>
+<li><p>List with code</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'boom'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(dom);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dialog</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span>Headsup<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"js-close-dialog"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>test_cat_2</category>
+      </categories>
+      <tags>
+        <tag>test_tag_1</tag>
+        <tag>test2_tag_3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Fundamentals of Risk and Returns</title>
     <url>/2021-01-01-%20Fundamentals%20of%20Risk%20and%20Returns/</url>
     <content><![CDATA[<h1 id="Risk-and-Returns"><a href="#Risk-and-Returns" class="headerlink" title="Risk and Returns"></a>Risk and Returns</h1><h2 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h2><p>Average return (of a year): average of returns in each month.</p>
@@ -170,6 +170,8 @@
     <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
 <p>Testing <em>italic</em><br>Testing <strong>Bold</strong></p>
 <p>Test code </p>
+<p>测试简体中文</p>
+<p>測試繁體中文</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br></pre></td></tr></table></figure>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
