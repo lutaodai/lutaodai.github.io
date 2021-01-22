@@ -31,81 +31,12 @@
 
 
 <body>
-.progress-bar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: $z-index-9;
+<div class="progress-bar-container">
+    
 
-  if (hexo-config('pjax.enable') == true) {
+    
+</div>
 
-    .pjax-progress-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 2px;
-      width: 0;
-      background: var(--pjax-progress-bar-color);
-      visibility: hidden;
-      opacity: 0;
-      z-index: $z-index-8;
-      transition: all 0.1s ease;
-
-      &.show {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-
-    .pjax-progress-icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: $z-index-8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 7px 6px 0 0;
-      color: var(--default-text-color);
-      visibility: hidden;
-      font-size: 1.1rem;
-      transition();
-
-      +keep-tablet() {
-        padding: 6px 5px 0 0;
-        font-size: 1rem;
-      }
-
-      &.show {
-        transition: visibility 0.1s linear;
-        visibility: visible;
-      }
-    }
-
-  }
-
-  if (hexo-config('style.scroll.progress_bar.enable') == true) {
-
-    .scroll-progress-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: $scroll-progress-bar-height;
-      visibility: hidden;
-      background: var(--primary-color);
-      transition: all 0.1s ease;
-      z-index: $z-index-7;
-
-      &.hide {
-        display: none !important;
-      }
-    }
-
-  }
-}
 
 <main class="page-container">
 
@@ -228,21 +159,15 @@
             <div class="main-content normal-code-theme">
 
                 
-                    .tagcloud-container {
+                    
+    <div class="fade-in-down-animation">
+        <div class="tagcloud-container">
+            <div class="tagcloud-content">
+                <a href="/tags/test2-tag-2/" style="font-size: 0.98em;">test2_tag_2</a> <a href="/tags/test2-tag-3/" style="font-size: 1.5em;">test2_tag_3</a> <a href="/tags/test-tag-1/" style="font-size: 1.33em;">test_tag_1</a> <a href="/tags/test-tag-2/" style="font-size: 1.15em;">test_tag_2</a>
+            </div>
+        </div>
+    </div>
 
-  keep-container(1.005, 1.01, 30px, 30px);
-
-  .tagcloud-content {
-
-    text-align: justify;
-    font-size: 1.2rem;
-
-    a {
-      padding: 8px 6px;
-      display: inline-block;
-    }
-  }
-}
 
 
                 
