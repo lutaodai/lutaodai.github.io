@@ -1232,7 +1232,7 @@ body {
   background: var(--background-color);
   font-family: Lora, Noto Serif SC, Georgia, Arial, Lato, Garamond, Times New Roman, system-ui, Optima-Regular, Optima, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15.2px;
   line-height: 22px;
 }
 html::-webkit-scrollbar,
@@ -1243,14 +1243,14 @@ body::-webkit-scrollbar {
 @media (max-width: 780px) {
   html,
   body {
-    font-size: 15.36px;
+    font-size: 14.591999999999999px;
     line-height: 21.119999999999997px;
   }
 }
 @media (max-width: 500px) {
   html,
   body {
-    font-size: 14.4px;
+    font-size: 13.68px;
     line-height: 19.8px;
   }
 }
