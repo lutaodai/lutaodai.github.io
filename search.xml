@@ -3,7 +3,7 @@
   <entry>
     <title>Integrated Gradients</title>
     <url>/2021-05-18-integrated-gradients/</url>
-    <content><![CDATA[<p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors design a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
+    <content><![CDATA[<p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors designed a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
 <a id="more"></a>
 
 <p><strong>Notations</strong></p>
