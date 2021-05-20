@@ -1137,7 +1137,7 @@ pre,
   font-size: 0.96rem;
   color: var(--highlight-foreground);
   background: var(--highlight-background);
-  line-height: 1rem;
+  line-height: 1.5rem;
   transition: all 0.5s ease;
 }
 pre,
@@ -1145,7 +1145,8 @@ code {
   font-family: consolas, "Source Code Pro", Menlo;
 }
 code {
-  padding: 5px;
+  padding: 2px;
+  \: 5;
   word-wrap: break-word;
   color: var(--code-foreground);
   background: var(--code-background);
