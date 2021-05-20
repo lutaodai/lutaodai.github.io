@@ -2652,7 +2652,7 @@ code {
   font-family: consolas, "Source Code Pro", Menlo;
 }
 code {
-  padding: 2px;
+  padding: 1px;
   \: 5;
   word-wrap: break-word;
   color: var(--code-foreground);
