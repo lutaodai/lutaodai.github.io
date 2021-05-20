@@ -9,6 +9,8 @@
     
     <title>
         
+            Integrated Gradients |
+        
         Lutao
     </title>
     <link rel="shortcut icon" href="/images/scribble3.png">
@@ -169,7 +171,7 @@ mjx-container[display="true"] + br {
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/"
                             >
                                 HOME
@@ -230,7 +232,7 @@ mjx-container[display="true"] + br {
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/">HOME</a>
                 </li>
             
@@ -269,70 +271,97 @@ mjx-container[display="true"] + br {
             <div class="main-content normal-code-theme">
 
                 
-                    <div class="home-content-container fade-in-down-animation">
-    <ul class="home-article-list">
-        
-            <li class="home-article-item">
+                    <div class="fade-in-down-animation">
+    <div class="empty-page-container">
 
-                
+        
 
-                <h3 class="home-article-title">
-                    <a href="/2021-05-18-integrated-gradients/">
-                        Integrated Gradients
-                    </a>
-                </h3>
+        <div class="empty-page-content markdown-body">
+            
+                <p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors designed a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
+<a id="more"></a>
+<p><br></p>
+<p><strong>References</strong></p>
+<ul>
+<li>Friedman, E. J. (2004). "Paths and consistency in additive cost sharing." International Journal of Game Theory <strong>32</strong>(4): 501-518.</li>
+<li>Lerma, M. and M. Lucas (2021). "Symmetry-Preserving Paths in Integrated Gradients." arXiv preprint arXiv:2103.13533.</li>
+<li>Sundararajan, M., et al. (2017). Axiomatic attribution for deep networks. International Conference on Machine Learning, PMLR.</li>
+</ul>
 
-                <div class="home-article-content markdown-body">
-                    
-                        <p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors designed a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
-                    
-                </div>
+            
+        </div>
+        <div class="empty-page-comments">
+            
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'QVlrFkpumHg3eTEPeBfCVk8u-MdYXbMMI',
+                    appKey: 'sXyMuS0h0zeRfkc1UsKiisk3',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: 'Let me know your thoughts...',
+                    lang: 'en'.toLowerCase()
+                });
 
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i> <span class="home-article-date" data-date="Tue May 18 2021 16:53:00 GMT+0800">2021-05-18</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Explainable-AI/">Explainable AI</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fas fa-tags"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/paper/">paper</a>
-                        </li>
-                    
-                </ul>
-            </span>
-        
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+
+                        let author = 'Lutao Dai';
+                        author && (author = author.toLocaleLowerCase());
+
+                        for (let vcard of vcards) {
+                            const vnick = vcard.querySelector('.vhead .vnick');
+                            if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                                vnick.innerHTML = `${author} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
     </div>
 
-    <a href="/2021-05-18-integrated-gradients/">Read more <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-    </ul>
-
-    <div class="home-paginator">
-        <div class="paginator">
-    
 
     
 </div>
 
+            
+        </div>
     </div>
 </div>
 
@@ -452,7 +481,6 @@ mjx-container[display="true"] + br {
     
 
 </main>
-
 
 
 
