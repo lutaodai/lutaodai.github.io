@@ -2,34 +2,6 @@
 <search>
   <entry>
     <title>Integrated Gradients</title>
-    <url>/2021-05-20-ig-captum-oom/</url>
-    <content><![CDATA[<p>When applying</p>
-<p>https://captum.ai/docs/faq#i-am-facing-out-of-memory-oom-errors-when-using-captum-how-do-i-resolve-this</p>
-<blockquote>
-<p>When using methods such as Integrated Gradients, Conductance, Internal Influence or other algorithms with n_steps argument, the input is expanded n_steps times, which often becomes too large to fit in memory. To address this issue, you can either reduce n_steps, which may lead to lower-quality approximations, or use the internal_batch_size argument, which allows dividing the expanded input into batches which are processed sequentially. Note that using internal_batch_size will increase runtime since it runs multiple evaluations, so it is best to utilize the largest feasible batch size within memory constraints.</p>
-</blockquote>
-<p>If you are using a perturbation-based attribution algorithm, try reducing perturbations_per_eval if it is set to a value greater than 1. This will limit the number of perturbations processed in one batch.</p>
-<p>For other algorithms, it might be necessary to try a smaller input batch size.</p>
-<a id="more"></a>
-<p><br></p>
-<p><strong>References</strong></p>
-<ul>
-<li>Friedman, E. J. (2004). "Paths and consistency in additive cost sharing." International Journal of Game Theory <strong>32</strong>(4): 501-518.</li>
-<li>Lerma, M. and M. Lucas (2021). "Symmetry-Preserving Paths in Integrated Gradients." arXiv preprint arXiv:2103.13533.</li>
-<li>Sundararajan, M., et al. (2017). Axiomatic attribution for deep networks. International Conference on Machine Learning, PMLR.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Explainable AI</category>
-      </categories>
-      <tags>
-        <tag>coding</tag>
-        <tag>PyTorch</tag>
-        <tag>Captum</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Integrated Gradients</title>
     <url>/2021-05-18-integrated-gradients/</url>
     <content><![CDATA[<p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors designed a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
 <a id="more"></a>
@@ -131,6 +103,34 @@
       </categories>
       <tags>
         <tag>paper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Integrated Gradients</title>
+    <url>/2021-05-20-ig-captum-oom/</url>
+    <content><![CDATA[<p>When applying</p>
+<p>https://captum.ai/docs/faq#i-am-facing-out-of-memory-oom-errors-when-using-captum-how-do-i-resolve-this</p>
+<blockquote>
+<p>When using methods such as Integrated Gradients, Conductance, Internal Influence or other algorithms with n_steps argument, the input is expanded n_steps times, which often becomes too large to fit in memory. To address this issue, you can either reduce n_steps, which may lead to lower-quality approximations, or use the internal_batch_size argument, which allows dividing the expanded input into batches which are processed sequentially. Note that using internal_batch_size will increase runtime since it runs multiple evaluations, so it is best to utilize the largest feasible batch size within memory constraints.</p>
+</blockquote>
+<p>If you are using a perturbation-based attribution algorithm, try reducing perturbations_per_eval if it is set to a value greater than 1. This will limit the number of perturbations processed in one batch.</p>
+<p>For other algorithms, it might be necessary to try a smaller input batch size.</p>
+<a id="more"></a>
+<p><br></p>
+<p><strong>References</strong></p>
+<ul>
+<li>Friedman, E. J. (2004). "Paths and consistency in additive cost sharing." International Journal of Game Theory <strong>32</strong>(4): 501-518.</li>
+<li>Lerma, M. and M. Lucas (2021). "Symmetry-Preserving Paths in Integrated Gradients." arXiv preprint arXiv:2103.13533.</li>
+<li>Sundararajan, M., et al. (2017). Axiomatic attribution for deep networks. International Conference on Machine Learning, PMLR.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Explainable AI</category>
+      </categories>
+      <tags>
+        <tag>coding</tag>
+        <tag>PyTorch</tag>
+        <tag>Captum</tag>
       </tags>
   </entry>
 </search>
