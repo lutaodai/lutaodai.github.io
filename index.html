@@ -277,6 +277,74 @@ mjx-container[display="true"] + br {
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2021-05-20-ig-captum-oom/">
+                        Integrated Gradients
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        <p>When applying</p>
+<p>https://captum.ai/docs/faq#i-am-facing-out-of-memory-oom-errors-when-using-captum-how-do-i-resolve-this</p>
+<blockquote>
+<p>When using methods such as Integrated Gradients, Conductance, Internal Influence or other algorithms with n_steps argument, the input is expanded n_steps times, which often becomes too large to fit in memory. To address this issue, you can either reduce n_steps, which may lead to lower-quality approximations, or use the internal_batch_size argument, which allows dividing the expanded input into batches which are processed sequentially. Note that using internal_batch_size will increase runtime since it runs multiple evaluations, so it is best to utilize the largest feasible batch size within memory constraints.</p>
+</blockquote>
+<p>If you are using a perturbation-based attribution algorithm, try reducing perturbations_per_eval if it is set to a value greater than 1. This will limit the number of perturbations processed in one batch.</p>
+<p>For other algorithms, it might be necessary to try a smaller input batch size.</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i> <span class="home-article-date" data-date="Thu May 20 2021 17:58:20 GMT+0800">2021-05-20</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Explainable-AI/">Explainable AI</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/coding/">coding</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/PyTorch/">PyTorch</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Captum/">Captum</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2021-05-20-ig-captum-oom/">Read more <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2021-05-18-integrated-gradients/">
                         Integrated Gradients
                     </a>
