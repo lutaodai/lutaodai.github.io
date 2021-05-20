@@ -2644,7 +2644,7 @@ pre,
   font-size: 0.96rem;
   color: var(--highlight-foreground);
   background: var(--highlight-background);
-  line-height: 1.5rem;
+  line-height: 1rem;
   transition: all 0.3s ease;
 }
 pre,
@@ -2656,7 +2656,7 @@ code {
   word-wrap: break-word;
   color: var(--code-foreground);
   background: var(--code-background);
-  border-radius: 0.5px;
+  border-radius: 2px;
   font-size: 0.96rem;
 }
 pre {
