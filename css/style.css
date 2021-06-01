@@ -1250,8 +1250,8 @@ body::-webkit-scrollbar {
 @media (max-width: 500px) {
   html,
   body {
-    font-size: 14.4px;
-    line-height: 19.8px;
+    font-size: 15.36px;
+    line-height: 21.119999999999997px;
   }
 }
 *::-webkit-scrollbar {
@@ -1406,7 +1406,7 @@ textarea.veditor.vinput {
   color: var(--second-text-color);
 }
 .markdown-body h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.2rem;
 }
@@ -1423,7 +1423,7 @@ textarea.veditor.vinput {
   }
 }
 .markdown-body h2 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.2rem;
 }
@@ -1440,7 +1440,7 @@ textarea.veditor.vinput {
   }
 }
 .markdown-body h3 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 550;
   line-height: 1.16rem;
 }
