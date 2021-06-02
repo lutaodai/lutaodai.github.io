@@ -21,7 +21,7 @@
         
             The Attention Interpretability Debate |
         
-        Lutao
+        Lutao Dai
     </title>
     <link rel="shortcut icon" href="/images/scribble3.png">
     
@@ -171,7 +171,7 @@ mjx-container[display="true"] + br {
     <div class="header-content">
         <div class="left">
             <a class="logo-title" href="/">
-                Lutao
+                Lutao Dai
             </a>
         </div>
 
@@ -375,7 +375,7 @@ mjx-container[display="true"] + br {
 </p>
 <p>They disconnect the computation graph at the attention module, i.e., fixing attention and treating them like an additional set of input. Effectively, this setting answers <em>how much does the output change as we perturb particular inputs by a small amount, while paying the same amount of attention to the said word as originally estimated</em>. The correlation is quantified by Kendall <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.029ex" xmlns="http://www.w3.org/2000/svg" width="1.17ex" height="1.005ex" role="img" focusable="false" viewBox="0 -431 517 444"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g></g></g></svg></mjx-container></span> correlation.</p>
 <p>The observed correlations are modest between BiLSTM attentions with the two baselines. The centrality of observed densities of correlations hovers around or below 0.5 in most of the corpora considered.</p>
-<p>One plausible explanation for moderate correlations between attentions and the two baselines is that there exist many irrelevant features (or “noise” as articulated in the paper) because of Kendall <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.029ex" xmlns="http://www.w3.org/2000/svg" width="1.17ex" height="1.005ex" role="img" focusable="false" viewBox="0 -431 517 444"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g></g></g></svg></mjx-container></span> measures <a class="link" target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Rank_correlation">ordinal association<i class="fas fa-external-link-alt"></i></a>. This hypothesis is rejected on the basis that drops in correlations between the results of two baselines and those between gradient baseline and attention weights are not homogeneous across datasets. (The assumption, in essence, is that if the drop in correlation is completely due to noise, which is regarded as completely random, then the effect of this noise should be the same throughout)</p>
+<p>One plausible explanation for moderate correlations between attentions and the two baselines is that there exist many irrelevant features (or “noise” as articulated in the paper) because Kendall <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.029ex" xmlns="http://www.w3.org/2000/svg" width="1.17ex" height="1.005ex" role="img" focusable="false" viewBox="0 -431 517 444"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g></g></g></svg></mjx-container></span> measures <a class="link" target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Rank_correlation">ordinal association<i class="fas fa-external-link-alt"></i></a>. This hypothesis is rejected on the basis that drops in correlations between the results of two baselines and those between gradient baseline and attention weights are not homogeneous across datasets. (The assumption, in essence, is that if the drop in correlation is completely due to noise, which is regarded as completely random, then the effect of this noise should be the same throughout)</p>
 <p>Therefore, they concluded that attention weights do not strongly or consistently agree with standard feature importance scores.</p>
 <p><strong>Finding 2a: randomly permuting attention weights often induces only minimal changes in output</strong></p>
 <p>They scramble the original attention weights and reassigning each value to input features randomly. They find that in many cases this process produces little difference to the prediction. However, for <em>positive</em> samples in specific datasets, this process leads to significant changes in prediction. They conjecture that this is due to a few tokens serving as high precision indicators for the positive classes. (They did not verify whether there exists a dominant attention weight for positive samples even though this is easily done)</p>
@@ -552,67 +552,135 @@ mjx-container[display="true"] + br {
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     
-        
-    <div class="valine-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: 'QVlrFkpumHg3eTEPeBfCVk8u-MdYXbMMI',
-                    appKey: 'sXyMuS0h0zeRfkc1UsKiisk3',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: 'Let me know your thoughts...',
-                    lang: 'en'.toLowerCase()
-                });
+        @require '../../../common/variables.styl'
+.valine-container {
 
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
+  #vcomments {
 
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
+    .vwrap {
 
-                        let author = 'Lutao Dai';
-                        author && (author = author.toLocaleLowerCase());
+      border: 1px solid var(--third-text-color);
 
-                        for (let vcard of vcards) {
-                            const vnick = vcard.querySelector('.vhead .vnick');
-                            if (vnick.innerHTML.toLocaleLowerCase() === author) {
-                                vnick.innerHTML = `${author} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
+      .vheader {
+
+        .vinput {
+
+          color: var(--default-text-color);
+          border-color: var(--third-text-color);
+
+          &:focus {
+            border-bottom: 1px dashed var(--primary-color) !important;
+          }
+        }
+      }
+
+
+      .vedit {
+
+        .veditor {
+          color: var(--default-text-color);
+        }
+
+        .vctrl {
+
+          .vicon {
+
+            fill: var(--default-text-color);
+
+            &.actived {
+              fill: var(--primary-color);
             }
+          }
+        }
 
-            if ('false') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
+      }
 
+
+      button.vsubmit {
+
+        background: transparent !important;
+        color: var(--default-text-color) !important;
+        border: 1px solid var(--default-text-color) !important;
+
+        &:hover {
+          color: var(--primary-color) !important;
+          border: 1px solid var(--primary-color) !important;
+        }
+      }
+
+
+    }
+
+
+    .vcount {
+      color: var(--default-text-color);
+
+      .vnum {
+        color: var(--second-text-color);
+      }
+    }
+
+
+    .vcard {
+
+      .vnick {
+        .author {
+          
+          font-weight: 450;
+          font-size: 12px;
+          padding: 2px;
+          background: -webkit-linear-gradient(45deg, #e3565e, #ee854b, #f6c258, #90c68a, #5fb3b3, #6699cc, #c594c5);
+          background: linear-gradient(45deg, #e3565e, #ee854b, #f6c258, #90c68a, #5fb3b3, #6699cc, #c594c5);
+          color: #fff;
+          margin-left: 2px;
+          border-radius: 2px;
+        }
+      }
+
+      .vhead {
+
+        .vnick {
+          color: var(--primary-color);
+        }
+
+        .vsys {
+          color: var(--default-text-color);
+          background: var(--fourth-text-color) !important;
+        }
+      }
+
+
+      .vcontent {
+        P {
+          color: var(--default-text-color);
+        }
+      }
+
+
+      .vh {
+        border-bottom-color: var(--border-color);
+      }
+    }
+
+
+    .vcopy {
+      color: var(--third-text-color);
+    }
+
+
+    .vpage {
+
+      .vmore {
+        border: 1px solid var(--border-color);
+        color: var(--second-text-color);
+      }
+    }
+
+
+  }
+
+
+}
 
     
 </div>
