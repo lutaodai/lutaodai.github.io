@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lutaodai.github.io/2021-07-15-gnn-ehr/</loc>
+    
+    <lastmod>2021-07-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lutaodai.github.io/2021-05-31-attn-interpretability-debate/</loc>
     
     <lastmod>2021-06-02</lastmod>
@@ -39,7 +46,7 @@
 
   <url>
     <loc>https://lutaodai.github.io/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -47,14 +54,14 @@
   
   <url>
     <loc>https://lutaodai.github.io/tags/paper/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lutaodai.github.io/tags/attention/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -63,7 +70,21 @@
   
   <url>
     <loc>https://lutaodai.github.io/categories/Explainable-AI/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/categories/GNN/</loc>
+    <lastmod>2021-07-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/categories/GNN/EHR/</loc>
+    <lastmod>2021-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
