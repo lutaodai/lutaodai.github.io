@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z0D8VRHES"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Z0D8VRHES');
+    </script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Lutao Dai">
+    
+    <title>
+        
+            An Minimalistic Introduction to einsum |
+        
+        Lutao Dai
+    </title>
+    <link rel="shortcut icon" href="/images/scribble3.png">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lutaodai.github.io","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","avatar":"/images/profile.jpg","favicon":"/images/scribble3.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"default"},"side_tools":{"enable":true},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.3.0"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+<meta name="generator" content="Hexo 5.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Lutao Dai
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content normal-code-theme">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">An Minimalistic Introduction to einsum</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/profile.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Lutao Dai</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i> 2021-05-18 16:53:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Coding/">Coding</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/numpy/">numpy</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/pytorch/">pytorch</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/einsum/">einsum</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>657 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>4 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors designed a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
+<a id="more"></a>
+<hr>
+<p><br></p>
+<h1 id="introduction">Introduction</h1>
+<p><code>einsum</code> streamlines the following algebraic operations</p>
+<pre><code>1. matrix multiplication
+2. summation over given dimensions
+3. transpose</code></pre>
+<p>The <code>numpy</code> function for the Einstein summation convention is</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.einsum(subscripts, *operands)</span><br></pre></td></tr></table></figure>
+<p>where <code>subscripts</code> is a string defining the operation, and <code>operands</code> are arrays for the operation.</p>
+<hr>
+<p><br></p>
+<h1 id="principles">Principles</h1>
+<p>The Einstein summation convention follows the following principles. In short</p>
+<blockquote>
+<p>Inputs (left to the <code>-&gt;</code>) control multiplication. The output (right to the <code>-&gt;</code>) controls summation and transpose.</p>
+</blockquote>
+<p>Input arrays</p>
+<ol type="1">
+<li>(P1) Repeated letters among input arrays: dimensions to be multiplied together</li>
+<li>(P2) If a label appears once, it is not summed.</li>
+<li>(P3) Repeated subscript labels in one operand take the diagonal.</li>
+</ol>
+<p>The output array</p>
+<ol type="1">
+<li>(P4, summation) Omitted letters of the output array: summing over values of the corresponding dimensions; On the contrary, dimensions corresponding to non-omitted letters are kept.</li>
+<li>(P5, order) In implicit mode (without <code>-&gt;</code>), the chosen subscripts are important since the axes of the output are reordered alphabetically. In explicit mode (with <code>-&gt;</code>), the order of axes is defined by the subscripts</li>
+</ol>
+<hr>
+<p><br></p>
+<h1 id="examples">Examples</h1>
+<h2 id="a-b-1d-arrays"><code>A</code>, <code>B</code>: 1D arrays</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Subscripts</th>
+<th>Numpy</th>
+<th>Principles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>('i-&gt;', A)</code></td>
+<td><code>sum(A)</code></td>
+<td>P4</td>
+</tr>
+<tr class="even">
+<td><code>('i,i-&gt;i', A, B)</code></td>
+<td><code>A * B</code></td>
+<td>P1: repeating 'i' on the left → multiplication over that dimension <br>P4: no omission → keeping the dimension</td>
+</tr>
+<tr class="odd">
+<td><code>('i,i', A, B)</code></td>
+<td><code>np.inner(A, B)</code></td>
+<td>P1: repeating 'i' on the left → multiplication over that dimension <br> P4: omission → applying summation to collapse the dimension</td>
+</tr>
+<tr class="even">
+<td><code>('i,j-&gt;ij', A, B)</code></td>
+<td><code>np.outer(A, B)</code></td>
+<td>P1: no repeating letters on the left → need to derive the multiplication dimension from the output → equivalent to 'i1,1j-&gt;ij'</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-b-2d-arrays"><code>A</code>, <code>B</code>: 2D arrays</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Subscripts</th>
+<th>Numpy</th>
+<th>Principles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>('ij', A)</code></td>
+<td><code>A</code></td>
+<td>P2, P5</td>
+</tr>
+<tr class="even">
+<td><code>('ji', A)</code></td>
+<td><code>A.T</code></td>
+<td>P2, P5: the subscript names the first and the second axis of A as j and i. In implicit mode, the axis order of the output array will be rearranged based on the alphabetical order of axes. Therefore, the second axis of A becomes the first axis of the output.</td>
+</tr>
+<tr class="odd">
+<td><code>('ij-&gt;', A)</code></td>
+<td><code>np.sum(A)</code></td>
+<td>P4</td>
+</tr>
+<tr class="even">
+<td><code>('ij-&gt;j', A)</code></td>
+<td><code>np.sum(A, axis=0)</code></td>
+<td>P4</td>
+</tr>
+<tr class="odd">
+<td><code>('ij-&gt;i', A)</code></td>
+<td><code>np.sum(A, axis=1)</code></td>
+<td>P4</td>
+</tr>
+<tr class="even">
+<td><code>('ii', A)</code> or <code>('ii-&gt;', A)</code></td>
+<td><code>np.trace(A)</code></td>
+<td>P3: 'ii' returns an array of size i; P4: the only named label i is missing from the output → summation</td>
+</tr>
+<tr class="odd">
+<td><code>('ii-&gt;i', A)</code></td>
+<td><code>np.diag(A)</code></td>
+<td>P3: 'ii' returns an array of size i; P4: the dimension i is kept</td>
+</tr>
+<tr class="even">
+<td><code>('ij,ij-&gt;ij', A, B)</code></td>
+<td><code>A * B</code></td>
+<td>P1, P5</td>
+</tr>
+<tr class="odd">
+<td><code>('ij,ji-&gt;ij', A, B)</code></td>
+<td><code>A * (B.T)</code></td>
+<td>P1: the first axis of A is multiplied by the second axis of B; the second axis of A is multiplied by the first axis of B. P5: the output is arranged in the way same as A.</td>
+</tr>
+<tr class="even">
+<td><code>('ij,jk', A, B)</code></td>
+<td><code>np.dot(A, B)</code></td>
+<td>P1, P5</td>
+</tr>
+<tr class="odd">
+<td><code>('ij,kj-&gt;ik', A, B)</code></td>
+<td><code>np.inner(A, B)</code>(the inner function in higher dimensions executes a sum product over the last axes)</td>
+<td>P1, P4, P5</td>
+</tr>
+<tr class="even">
+<td><code>('ij,kj-&gt;ijk', A, B)</code></td>
+<td><code>A[:, None] * B</code></td>
+<td><code>A[:,None]</code> is equivalent to i1j (inserting a dimension in the second position).<br>P2, P5</td>
+</tr>
+<tr class="odd">
+<td><code>('ij,kl-&gt;ijkl', A, B)</code></td>
+<td><code>A[:,:,None, None] * B</code></td>
+<td>P2, P5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ellipsis-...">Ellipsis (...)</h2>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Subscripts</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>np.einsum('...ii-&gt;...i', A)</code></td>
+<td>Getting diagonal entries of the last two dimensions</td>
+</tr>
+<tr class="even">
+<td><code>np.einsum('i...i', A)</code></td>
+<td>Take the trace along the first and the last axes</td>
+</tr>
+<tr class="odd">
+<td><code>np.einsum('ij...,jk...-&gt;ik...', A, B)</code></td>
+<td>Matrix multiplication iwth the left-most indices instead of rightmost</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><br></p>
+<p><strong>References</strong></p>
+<ul>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://ajcr.net/Basic-guide-to-einsum/">A basic introduction to NumPy's einsum<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html">numpy.einsum - NumPy v1.21 Manual<i class="fas fa-external-link-alt"></i></a></p></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：An Minimalistic Introduction to einsum</li>
+        <li>Post author：Lutao Dai</li>
+        <li>Create time：2021-05-18 16:53:00</li>
+        <li>
+            Post link：https://lutaodai.github.io/2021-09-15-minimalistic-intro-einsum/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021-05-18-integrated-gradients/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Integrated Gradients</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: 'QVlrFkpumHg3eTEPeBfCVk8u-MdYXbMMI',
+                    appKey: 'sXyMuS0h0zeRfkc1UsKiisk3',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: 'Let me know your thoughts...',
+                    lang: 'en'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+
+                        let author = 'Lutao Dai';
+                        author && (author = author.toLocaleLowerCase());
+
+                        for (let vcard of vcards) {
+                            const vnick = vcard.querySelector('.vhead .vnick');
+                            if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                                vnick.innerHTML = `${author} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span> -
+            
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Lutao Dai</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.3.0</a>
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#principles"><span class="nav-number">2.</span> <span class="nav-text">Principles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-b-1d-arrays"><span class="nav-number">3.1.</span> <span class="nav-text">A, B: 1D arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-b-2d-arrays"><span class="nav-number">3.2.</span> <span class="nav-text">A, B: 2D arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ellipsis-..."><span class="nav-number">3.3.</span> <span class="nav-text">Ellipsis (...)</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
