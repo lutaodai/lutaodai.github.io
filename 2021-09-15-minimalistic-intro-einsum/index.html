@@ -300,7 +300,7 @@ mjx-container[display="true"] + br {
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> 2021-05-18 16:53:00
+        <i class="fas fa-edit"></i> 2021-09-15 16:02:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -338,12 +338,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>657 Words</span>
+            <i class="fas fa-file-word"></i> <span>610 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>4 Mins</span>
+            <i class="fas fa-clock"></i> <span>3 Mins</span>
         </span>
     
     
@@ -355,12 +355,13 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <p>The paper (Sundararajan, Taly et al. 2017) identifies two axioms – <em>sensitivity</em> and <em>implementation invariance</em> that attribution methods ought to satisfy. Based on the axioms, the authors designed a new attribution method called <em>integrated gradients</em>. The method requires no modification to the original model and needs only a few calls to the standard gradient operator.</p>
+            <p>This post introduces essence of the Einstein summation convention (Einsum).</p>
 <a id="more"></a>
+
 <hr>
-<p><br></p>
-<h1 id="introduction">Introduction</h1>
-<p><code>einsum</code> streamlines the following algebraic operations</p>
+<br>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><code>einsum</code> streamlines the following algebraic operations</p>
 <pre><code>1. matrix multiplication
 2. summation over given dimensions
 3. transpose</code></pre>
@@ -368,178 +369,159 @@ mjx-container[display="true"] + br {
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.einsum(subscripts, *operands)</span><br></pre></td></tr></table></figure>
 <p>where <code>subscripts</code> is a string defining the operation, and <code>operands</code> are arrays for the operation.</p>
 <hr>
-<p><br></p>
-<h1 id="principles">Principles</h1>
-<p>The Einstein summation convention follows the following principles. In short</p>
+<br>
+
+<h1 id="Principles"><a href="#Principles" class="headerlink" title="Principles"></a>Principles</h1><p>The Einstein summation convention follows the following principles. In short</p>
 <blockquote>
-<p>Inputs (left to the <code>-&gt;</code>) control multiplication. The output (right to the <code>-&gt;</code>) controls summation and transpose.</p>
+<p>Inputs (left to the <code>-&gt;</code>) control multiplication.<br>The output (right to the <code>-&gt;</code>) controls summation and transpose.</p>
 </blockquote>
 <p>Input arrays</p>
-<ol type="1">
+<ol>
 <li>(P1) Repeated letters among input arrays: dimensions to be multiplied together</li>
 <li>(P2) If a label appears once, it is not summed.</li>
 <li>(P3) Repeated subscript labels in one operand take the diagonal.</li>
 </ol>
 <p>The output array</p>
-<ol type="1">
+<ol>
 <li>(P4, summation) Omitted letters of the output array: summing over values of the corresponding dimensions; On the contrary, dimensions corresponding to non-omitted letters are kept.</li>
 <li>(P5, order) In implicit mode (without <code>-&gt;</code>), the chosen subscripts are important since the axes of the output are reordered alphabetically. In explicit mode (with <code>-&gt;</code>), the order of axes is defined by the subscripts</li>
 </ol>
 <hr>
-<p><br></p>
-<h1 id="examples">Examples</h1>
-<h2 id="a-b-1d-arrays"><code>A</code>, <code>B</code>: 1D arrays</h2>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
+<br>
+
+<h1 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h1><h2 id="A-B-1D-arrays"><a href="#A-B-1D-arrays" class="headerlink" title="A, B: 1D arrays"></a><code>A</code>, <code>B</code>: 1D arrays</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>Subscripts</th>
 <th>Numpy</th>
 <th>Principles</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td><code>('i-&gt;', A)</code></td>
 <td><code>sum(A)</code></td>
 <td>P4</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('i,i-&gt;i', A, B)</code></td>
 <td><code>A * B</code></td>
-<td>P1: repeating 'i' on the left → multiplication over that dimension <br>P4: no omission → keeping the dimension</td>
+<td>P1: repeating ‘i’ on the left → multiplication over that dimension <br>P4: no omission → keeping the dimension</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('i,i', A, B)</code></td>
 <td><code>np.inner(A, B)</code></td>
-<td>P1: repeating 'i' on the left → multiplication over that dimension <br> P4: omission → applying summation to collapse the dimension</td>
+<td>P1: repeating ‘i’ on the left → multiplication over that dimension <br> P4: omission → applying summation to collapse the dimension</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('i,j-&gt;ij', A, B)</code></td>
 <td><code>np.outer(A, B)</code></td>
-<td>P1: no repeating letters on the left → need to derive the multiplication dimension from the output → equivalent to 'i1,1j-&gt;ij'</td>
+<td>P1: no repeating letters on the left → need to derive the multiplication dimension from the output → equivalent to ‘i1,1j-&gt;ij’</td>
 </tr>
-</tbody>
-</table>
-<h2 id="a-b-2d-arrays"><code>A</code>, <code>B</code>: 2D arrays</h2>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
+</tbody></table>
+<h2 id="A-B-2D-arrays"><a href="#A-B-2D-arrays" class="headerlink" title="A, B: 2D arrays"></a><code>A</code>, <code>B</code>: 2D arrays</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>Subscripts</th>
 <th>Numpy</th>
 <th>Principles</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td><code>('ij', A)</code></td>
 <td><code>A</code></td>
 <td>P2, P5</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('ji', A)</code></td>
 <td><code>A.T</code></td>
 <td>P2, P5: the subscript names the first and the second axis of A as j and i. In implicit mode, the axis order of the output array will be rearranged based on the alphabetical order of axes. Therefore, the second axis of A becomes the first axis of the output.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('ij-&gt;', A)</code></td>
 <td><code>np.sum(A)</code></td>
 <td>P4</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('ij-&gt;j', A)</code></td>
 <td><code>np.sum(A, axis=0)</code></td>
 <td>P4</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('ij-&gt;i', A)</code></td>
 <td><code>np.sum(A, axis=1)</code></td>
 <td>P4</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('ii', A)</code> or <code>('ii-&gt;', A)</code></td>
 <td><code>np.trace(A)</code></td>
-<td>P3: 'ii' returns an array of size i; P4: the only named label i is missing from the output → summation</td>
+<td>P3: ‘ii’ returns an array of size i; P4: the only named label i is missing from the output → summation</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('ii-&gt;i', A)</code></td>
 <td><code>np.diag(A)</code></td>
-<td>P3: 'ii' returns an array of size i; P4: the dimension i is kept</td>
+<td>P3: ‘ii’ returns an array of size i; P4: the dimension i is kept</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('ij,ij-&gt;ij', A, B)</code></td>
 <td><code>A * B</code></td>
 <td>P1, P5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('ij,ji-&gt;ij', A, B)</code></td>
 <td><code>A * (B.T)</code></td>
 <td>P1: the first axis of A is multiplied by the second axis of B; the second axis of A is multiplied by the first axis of B. P5: the output is arranged in the way same as A.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('ij,jk', A, B)</code></td>
 <td><code>np.dot(A, B)</code></td>
 <td>P1, P5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('ij,kj-&gt;ik', A, B)</code></td>
 <td><code>np.inner(A, B)</code>(the inner function in higher dimensions executes a sum product over the last axes)</td>
 <td>P1, P4, P5</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>('ij,kj-&gt;ijk', A, B)</code></td>
 <td><code>A[:, None] * B</code></td>
 <td><code>A[:,None]</code> is equivalent to i1j (inserting a dimension in the second position).<br>P2, P5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>('ij,kl-&gt;ijkl', A, B)</code></td>
 <td><code>A[:,:,None, None] * B</code></td>
 <td>P2, P5</td>
 </tr>
-</tbody>
-</table>
-<h2 id="ellipsis-...">Ellipsis (...)</h2>
-<table>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
+</tbody></table>
+<h2 id="Ellipsis-…"><a href="#Ellipsis-…" class="headerlink" title="Ellipsis (…)"></a>Ellipsis (…)</h2><table>
 <thead>
-<tr class="header">
+<tr>
 <th>Subscripts</th>
 <th>Meaning</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td><code>np.einsum('...ii-&gt;...i', A)</code></td>
 <td>Getting diagonal entries of the last two dimensions</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>np.einsum('i...i', A)</code></td>
 <td>Take the trace along the first and the last axes</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>np.einsum('ij...,jk...-&gt;ik...', A, B)</code></td>
 <td>Matrix multiplication iwth the left-most indices instead of rightmost</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><br></p>
+<br>
+
+
 <p><strong>References</strong></p>
 <ul>
-<li><p><a class="link" target="_blank" rel="noopener" href="https://ajcr.net/Basic-guide-to-einsum/">A basic introduction to NumPy's einsum<i class="fas fa-external-link-alt"></i></a></p></li>
-<li><p><a class="link" target="_blank" rel="noopener" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html">numpy.einsum - NumPy v1.21 Manual<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://ajcr.net/Basic-guide-to-einsum/">A basic introduction to NumPy’s einsum<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html">numpy.einsum - NumPy v1.21 Manual<i class="fas fa-external-link-alt"></i></a></p>
+</li>
 </ul>
 
         </div>
@@ -550,7 +532,7 @@ mjx-container[display="true"] + br {
     <ul>
         <li>Post title：An Minimalistic Introduction to einsum</li>
         <li>Post author：Lutao Dai</li>
-        <li>Create time：2021-05-18 16:53:00</li>
+        <li>Create time：2021-09-15 16:02:00</li>
         <li>
             Post link：https://lutaodai.github.io/2021-09-15-minimalistic-intro-einsum/
         </li>
@@ -566,21 +548,21 @@ mjx-container[display="true"] + br {
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021-05-18-integrated-gradients/"
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021-07-20-query2box/"
                         >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Integrated Gradients</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-title-item">Query2Box</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
@@ -771,7 +753,7 @@ mjx-container[display="true"] + br {
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#principles"><span class="nav-number">2.</span> <span class="nav-text">Principles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-b-1d-arrays"><span class="nav-number">3.1.</span> <span class="nav-text">A, B: 1D arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-b-2d-arrays"><span class="nav-number">3.2.</span> <span class="nav-text">A, B: 2D arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ellipsis-..."><span class="nav-number">3.3.</span> <span class="nav-text">Ellipsis (...)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Principles"><span class="nav-number">2.</span> <span class="nav-text">Principles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-1D-arrays"><span class="nav-number">3.1.</span> <span class="nav-text">A, B: 1D arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-2D-arrays"><span class="nav-number">3.2.</span> <span class="nav-text">A, B: 2D arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ellipsis-%E2%80%A6"><span class="nav-number">3.3.</span> <span class="nav-text">Ellipsis (…)</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
