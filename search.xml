@@ -286,205 +286,6 @@
       </tags>
   </entry>
   <entry>
-    <title>An Minimalistic Introduction to einsum</title>
-    <url>/2022-04-13-minimalistic-intro-einsum/</url>
-    <content><![CDATA[<p>This post introduces essence of the Einstein summation convention (Einsum).</p>
-<a id="more"></a>
-<hr>
-<p><br></p>
-<h1 id="introduction">Introduction</h1>
-<p><code>einsum</code> streamlines the following algebraic operations</p>
-<pre><code>1. matrix multiplication
-2. summation over given dimensions
-3. transpose</code></pre>
-<p>The <code>numpy</code> function for the Einstein summation convention is</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.einsum(subscripts, *operands)</span><br></pre></td></tr></table></figure>
-<p>where <code>subscripts</code> is a string defining the operation, and <code>operands</code> are arrays for the operation.</p>
-<hr>
-<p><br></p>
-<h1 id="principles">Principles</h1>
-<p>The Einstein summation convention follows the following principles. In short</p>
-<blockquote>
-<p>Inputs (left to the <code>-&gt;</code>) control multiplication. The output (right to the <code>-&gt;</code>) controls summation and transpose.</p>
-</blockquote>
-<p>Input arrays</p>
-<ol type="1">
-<li>(P1) Repeated letters among input arrays: dimensions to be multiplied together</li>
-<li>(P2) If a label appears once, it is not summed.</li>
-<li>(P3) Repeated subscript labels in one operand take the diagonal.</li>
-</ol>
-<p>The output array</p>
-<ol type="1">
-<li>(P4, summation) Omitted letters of the output array: summing over values of the corresponding dimensions; On the contrary, dimensions corresponding to non-omitted letters are kept.</li>
-<li>(P5, order) In implicit mode (without <code>-&gt;</code>), the chosen subscripts are important since the axes of the output are reordered alphabetically. In explicit mode (with <code>-&gt;</code>), the order of axes is defined by the subscripts</li>
-</ol>
-<hr>
-<p><br></p>
-<h1 id="examples">Examples</h1>
-<h2 id="a-b-1d-arrays"><code>A</code>, <code>B</code>: 1D arrays</h2>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Subscripts</th>
-<th>Numpy</th>
-<th>Principles</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>('i-&gt;', A)</code></td>
-<td><code>sum(A)</code></td>
-<td>P4</td>
-</tr>
-<tr class="even">
-<td><code>('i,i-&gt;i', A, B)</code></td>
-<td><code>A * B</code></td>
-<td>P1: repeating 'i' on the left → multiplication over that dimension <br>P4: no omission → keeping the dimension</td>
-</tr>
-<tr class="odd">
-<td><code>('i,i', A, B)</code></td>
-<td><code>np.inner(A, B)</code></td>
-<td>P1: repeating 'i' on the left → multiplication over that dimension <br> P4: omission → applying summation to collapse the dimension</td>
-</tr>
-<tr class="even">
-<td><code>('i,j-&gt;ij', A, B)</code></td>
-<td><code>np.outer(A, B)</code></td>
-<td>P1: no repeating letters on the left → need to derive the multiplication dimension from the output → equivalent to 'i1,1j-&gt;ij'</td>
-</tr>
-</tbody>
-</table>
-<h2 id="a-b-2d-arrays"><code>A</code>, <code>B</code>: 2D arrays</h2>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Subscripts</th>
-<th>Numpy</th>
-<th>Principles</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>('ij', A)</code></td>
-<td><code>A</code></td>
-<td>P2, P5</td>
-</tr>
-<tr class="even">
-<td><code>('ji', A)</code></td>
-<td><code>A.T</code></td>
-<td>P2, P5: the subscript names the first and the second axis of A as j and i. In implicit mode, the axis order of the output array will be rearranged based on the alphabetical order of axes. Therefore, the second axis of A becomes the first axis of the output.</td>
-</tr>
-<tr class="odd">
-<td><code>('ij-&gt;', A)</code></td>
-<td><code>np.sum(A)</code></td>
-<td>P4</td>
-</tr>
-<tr class="even">
-<td><code>('ij-&gt;j', A)</code></td>
-<td><code>np.sum(A, axis=0)</code></td>
-<td>P4</td>
-</tr>
-<tr class="odd">
-<td><code>('ij-&gt;i', A)</code></td>
-<td><code>np.sum(A, axis=1)</code></td>
-<td>P4</td>
-</tr>
-<tr class="even">
-<td><code>('ii', A)</code> or <code>('ii-&gt;', A)</code></td>
-<td><code>np.trace(A)</code></td>
-<td>P3: 'ii' returns an array of size i; P4: the only named label i is missing from the output → summation</td>
-</tr>
-<tr class="odd">
-<td><code>('ii-&gt;i', A)</code></td>
-<td><code>np.diag(A)</code></td>
-<td>P3: 'ii' returns an array of size i; P4: the dimension i is kept</td>
-</tr>
-<tr class="even">
-<td><code>('ij,ij-&gt;ij', A, B)</code></td>
-<td><code>A * B</code></td>
-<td>P1, P5</td>
-</tr>
-<tr class="odd">
-<td><code>('ij,ji-&gt;ij', A, B)</code></td>
-<td><code>A * (B.T)</code></td>
-<td>P1: the first axis of A is multiplied by the second axis of B; the second axis of A is multiplied by the first axis of B. P5: the output is arranged in the way same as A.</td>
-</tr>
-<tr class="even">
-<td><code>('ij,jk', A, B)</code></td>
-<td><code>np.dot(A, B)</code></td>
-<td>P1, P5</td>
-</tr>
-<tr class="odd">
-<td><code>('ij,kj-&gt;ik', A, B)</code></td>
-<td><code>np.inner(A, B)</code>(the inner function in higher dimensions executes a sum product over the last axes)</td>
-<td>P1, P4, P5</td>
-</tr>
-<tr class="even">
-<td><code>('ij,kj-&gt;ijk', A, B)</code></td>
-<td><code>A[:, None] * B</code></td>
-<td><code>A[:,None]</code> is equivalent to i1j (inserting a dimension in the second position).<br>P2, P5</td>
-</tr>
-<tr class="odd">
-<td><code>('ij,kl-&gt;ijkl', A, B)</code></td>
-<td><code>A[:,:,None, None] * B</code></td>
-<td>P2, P5</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ellipsis-...">Ellipsis (...)</h2>
-<table>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Subscripts</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>np.einsum('...ii-&gt;...i', A)</code></td>
-<td>Getting diagonal entries of the last two dimensions</td>
-</tr>
-<tr class="even">
-<td><code>np.einsum('i...i', A)</code></td>
-<td>Take the trace along the first and the last axes</td>
-</tr>
-<tr class="odd">
-<td><code>np.einsum('ij...,jk...-&gt;ik...', A, B)</code></td>
-<td>Matrix multiplication iwth the left-most indices instead of rightmost</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><br></p>
-<p><strong>References</strong></p>
-<ul>
-<li><p><a class="link" href="https://ajcr.net/Basic-guide-to-einsum/">A basic introduction to NumPy's einsum<i class="fas fa-external-link-alt"></i></a></p></li>
-<li><p><a class="link" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html">numpy.einsum - NumPy v1.21 Manual<i class="fas fa-external-link-alt"></i></a></p></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Coding</category>
-      </categories>
-      <tags>
-        <tag>numpy</tag>
-        <tag>pytorch</tag>
-        <tag>einsum</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The Attention Interpretability Debate</title>
     <url>/2021-12-25-attn-interpretability-debate/</url>
     <content><![CDATA[<p>This post summarizes three papers at the center of the debate on whether attention is interpretable.</p>
@@ -820,6 +621,205 @@
         <tag>paper</tag>
         <tag>GNN</tag>
         <tag>EHR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>An Minimalistic Introduction to einsum</title>
+    <url>/2022-05-03-minimalistic-intro-einsum/</url>
+    <content><![CDATA[<p>This post introduces essence of the Einstein summation convention (Einsum).</p>
+<a id="more"></a>
+<hr>
+<p><br></p>
+<h1 id="introduction">Introduction</h1>
+<p><code>einsum</code> streamlines the following algebraic operations</p>
+<pre><code>1. matrix multiplication
+2. summation over given dimensions
+3. transpose</code></pre>
+<p>The <code>numpy</code> function for the Einstein summation convention is</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.einsum(subscripts, *operands)</span><br></pre></td></tr></table></figure>
+<p>where <code>subscripts</code> is a string defining the operation, and <code>operands</code> are arrays for the operation.</p>
+<hr>
+<p><br></p>
+<h1 id="principles">Principles</h1>
+<p>The Einstein summation convention follows the following principles. In short</p>
+<blockquote>
+<p>Inputs (left to the <code>-&gt;</code>) control multiplication. The output (right to the <code>-&gt;</code>) controls summation and transpose.</p>
+</blockquote>
+<p>Input arrays</p>
+<ol type="1">
+<li>(P1) Repeated letters among input arrays: dimensions to be multiplied together</li>
+<li>(P2) If a label appears once, it is not summed.</li>
+<li>(P3) Repeated subscript labels in one operand take the diagonal.</li>
+</ol>
+<p>The output array</p>
+<ol type="1">
+<li>(P4, summation) Omitted letters of the output array: summing over values of the corresponding dimensions; On the contrary, dimensions corresponding to non-omitted letters are kept.</li>
+<li>(P5, order) In implicit mode (without <code>-&gt;</code>), the chosen subscripts are important since the axes of the output are reordered alphabetically. In explicit mode (with <code>-&gt;</code>), the order of axes is defined by the subscripts</li>
+</ol>
+<hr>
+<p><br></p>
+<h1 id="examples">Examples</h1>
+<h2 id="a-b-1d-arrays"><code>A</code>, <code>B</code>: 1D arrays</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Subscripts</th>
+<th>Numpy</th>
+<th>Principles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>('i-&gt;', A)</code></td>
+<td><code>sum(A)</code></td>
+<td>P4</td>
+</tr>
+<tr class="even">
+<td><code>('i,i-&gt;i', A, B)</code></td>
+<td><code>A * B</code></td>
+<td>P1: repeating 'i' on the left → multiplication over that dimension <br>P4: no omission → keeping the dimension</td>
+</tr>
+<tr class="odd">
+<td><code>('i,i', A, B)</code></td>
+<td><code>np.inner(A, B)</code></td>
+<td>P1: repeating 'i' on the left → multiplication over that dimension <br> P4: omission → applying summation to collapse the dimension</td>
+</tr>
+<tr class="even">
+<td><code>('i,j-&gt;ij', A, B)</code></td>
+<td><code>np.outer(A, B)</code></td>
+<td>P1: no repeating letters on the left → need to derive the multiplication dimension from the output → equivalent to 'i1,1j-&gt;ij'</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-b-2d-arrays"><code>A</code>, <code>B</code>: 2D arrays</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Subscripts</th>
+<th>Numpy</th>
+<th>Principles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>('ij', A)</code></td>
+<td><code>A</code></td>
+<td>P2, P5</td>
+</tr>
+<tr class="even">
+<td><code>('ji', A)</code></td>
+<td><code>A.T</code></td>
+<td>P2, P5: the subscript names the first and the second axis of A as j and i. In implicit mode, the axis order of the output array will be rearranged based on the alphabetical order of axes. Therefore, the second axis of A becomes the first axis of the output.</td>
+</tr>
+<tr class="odd">
+<td><code>('ij-&gt;', A)</code></td>
+<td><code>np.sum(A)</code></td>
+<td>P4</td>
+</tr>
+<tr class="even">
+<td><code>('ij-&gt;j', A)</code></td>
+<td><code>np.sum(A, axis=0)</code></td>
+<td>P4</td>
+</tr>
+<tr class="odd">
+<td><code>('ij-&gt;i', A)</code></td>
+<td><code>np.sum(A, axis=1)</code></td>
+<td>P4</td>
+</tr>
+<tr class="even">
+<td><code>('ii', A)</code> or <code>('ii-&gt;', A)</code></td>
+<td><code>np.trace(A)</code></td>
+<td>P3: 'ii' returns an array of size i; P4: the only named label i is missing from the output → summation</td>
+</tr>
+<tr class="odd">
+<td><code>('ii-&gt;i', A)</code></td>
+<td><code>np.diag(A)</code></td>
+<td>P3: 'ii' returns an array of size i; P4: the dimension i is kept</td>
+</tr>
+<tr class="even">
+<td><code>('ij,ij-&gt;ij', A, B)</code></td>
+<td><code>A * B</code></td>
+<td>P1, P5</td>
+</tr>
+<tr class="odd">
+<td><code>('ij,ji-&gt;ij', A, B)</code></td>
+<td><code>A * (B.T)</code></td>
+<td>P1: the first axis of A is multiplied by the second axis of B; the second axis of A is multiplied by the first axis of B. P5: the output is arranged in the way same as A.</td>
+</tr>
+<tr class="even">
+<td><code>('ij,jk', A, B)</code></td>
+<td><code>np.dot(A, B)</code></td>
+<td>P1, P5</td>
+</tr>
+<tr class="odd">
+<td><code>('ij,kj-&gt;ik', A, B)</code></td>
+<td><code>np.inner(A, B)</code>(the inner function in higher dimensions executes a sum product over the last axes)</td>
+<td>P1, P4, P5</td>
+</tr>
+<tr class="even">
+<td><code>('ij,kj-&gt;ijk', A, B)</code></td>
+<td><code>A[:, None] * B</code></td>
+<td><code>A[:,None]</code> is equivalent to i1j (inserting a dimension in the second position).<br>P2, P5</td>
+</tr>
+<tr class="odd">
+<td><code>('ij,kl-&gt;ijkl', A, B)</code></td>
+<td><code>A[:,:,None, None] * B</code></td>
+<td>P2, P5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ellipsis-...">Ellipsis (...)</h2>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Subscripts</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>np.einsum('...ii-&gt;...i', A)</code></td>
+<td>Getting diagonal entries of the last two dimensions</td>
+</tr>
+<tr class="even">
+<td><code>np.einsum('i...i', A)</code></td>
+<td>Take the trace along the first and the last axes</td>
+</tr>
+<tr class="odd">
+<td><code>np.einsum('ij...,jk...-&gt;ik...', A, B)</code></td>
+<td>Matrix multiplication iwth the left-most indices instead of rightmost</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><br></p>
+<p><strong>References</strong></p>
+<ul>
+<li><p><a class="link" href="https://ajcr.net/Basic-guide-to-einsum/">A basic introduction to NumPy's einsum<i class="fas fa-external-link-alt"></i></a></p></li>
+<li><p><a class="link" href="https://numpy.org/doc/stable/reference/generated/numpy.einsum.html">numpy.einsum - NumPy v1.21 Manual<i class="fas fa-external-link-alt"></i></a></p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Coding</category>
+      </categories>
+      <tags>
+        <tag>numpy</tag>
+        <tag>pytorch</tag>
+        <tag>einsum</tag>
       </tags>
   </entry>
 </search>
