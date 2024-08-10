@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lutaodai.github.io/2024-08-11-softmax-cross-entropy-lossmd/</loc>
+    
+    <lastmod>2024-08-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lutaodai.github.io/2022-05-03-minimalistic-intro-einsum/</loc>
     
     <lastmod>2022-05-13</lastmod>
@@ -60,7 +67,7 @@
 
   <url>
     <loc>https://lutaodai.github.io/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,56 +75,63 @@
   
   <url>
     <loc>https://lutaodai.github.io/tags/paper/</loc>
-    <lastmod>2024-08-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lutaodai.github.io/tags/numpy/</loc>
-    <lastmod>2024-08-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lutaodai.github.io/tags/pytorch/</loc>
-    <lastmod>2024-08-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lutaodai.github.io/tags/einsum/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lutaodai.github.io/tags/KG-reasoning/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/tags/deep-learning/</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/tags/numpy/</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/tags/pytorch/</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/tags/einsum/</loc>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lutaodai.github.io/tags/attention/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lutaodai.github.io/tags/GNN/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lutaodai.github.io/tags/EHR/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -126,21 +140,28 @@
   
   <url>
     <loc>https://lutaodai.github.io/categories/Explainable-AI/</loc>
-    <lastmod>2024-08-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lutaodai.github.io/categories/Coding/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lutaodai.github.io/categories/GNN/</loc>
-    <lastmod>2024-08-09</lastmod>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/categories/DL-Fundations/</loc>
+    <lastmod>2024-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lutaodai.github.io/categories/Coding/</loc>
+    <lastmod>2024-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
